@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dana Cole | Actor. Producer.</title>
+<meta name="description" content="Dana Cole is a fictional actor and producer from Detroit. Film and television credits, latest project Winter Harbor, Cole House Pictures, Cole and Co. skincare, and the memoir The Long Way Home.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ivory: #F7F4EE;
+    --ink: #141414;
+    --green: #1E3A2F;
+    --green-light: #2E5244;
+    --taupe: #C9BFA9;
+    --taupe-dark: #8A8171;
+    --line: rgba(20, 20, 20, 0.14);
+    --serif: "Marcellus", Georgia, serif;
+    --sans: "Jost", "Helvetica Neue", Arial, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--ivory);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { display: block; max-width: 100%; }
+  a { color: var(--green); }
+
+  /* Demo strip */
+  .demo-strip {
+    background: var(--green);
+    color: #F7F4EE;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 10px 16px;
+    line-height: 1.5;
+  }
+
+  /* Falling leaves, in front of everything */
+  .leaves {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .leaf {
+    position: absolute;
+    top: -40px;
+    opacity: 0;
+    animation: leaf-fall linear infinite;
+    will-change: transform, opacity;
+  }
+  @keyframes leaf-fall {
+    0% { transform: translate3d(0, -40px, 0) rotate(0deg); opacity: 0; }
+    8% { opacity: var(--leaf-opacity, 0.55); }
+    85% { opacity: var(--leaf-opacity, 0.55); }
+    100% { transform: translate3d(var(--leaf-drift, 40px), 110vh, 0) rotate(340deg); opacity: 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .leaves { display: none; }
+    html { scroll-behavior: auto; }
+  }
+
+  /* Nav */
+  .nav {
+    border-bottom: 1px solid var(--line);
+    padding: 18px 24px;
+  }
+  .nav-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .nav-name {
+    font-family: var(--serif);
+    font-size: 24px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .nav-links {
+    display: flex;
+    gap: 26px;
+    flex-wrap: wrap;
+  }
+  .nav-links a {
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+  .nav-links a:hover { color: var(--green); text-decoration: underline; text-underline-offset: 4px; }
+
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+  /* Hero */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: center;
+    padding: 72px 24px 84px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .hero-eyebrow {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--taupe-dark);
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(52px, 8vw, 88px);
+    line-height: 1.02;
+    letter-spacing: 0.01em;
+    margin-bottom: 10px;
+  }
+  .hero-role {
+    font-family: var(--serif);
+    font-size: clamp(24px, 3.4vw, 32px);
+    color: var(--green);
+    margin-bottom: 22px;
+  }
+  .hero-intro {
+    font-size: 18px;
+    line-height: 1.7;
+    color: rgba(20, 20, 20, 0.78);
+    max-width: 46ch;
+    margin-bottom: 34px;
+  }
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    border-top: 1px solid var(--line);
+    padding-top: 24px;
+  }
+  .stat-num {
+    font-family: var(--serif);
+    font-size: 30px;
+    line-height: 1.1;
+    color: var(--green);
+  }
+  .stat-label {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--taupe-dark);
+    margin-top: 4px;
+  }
+  .hero-photo {
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+  }
+  .hero-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+  }
+  .photo-caption {
+    font-size: 13px;
+    color: var(--taupe-dark);
+    margin-top: 10px;
+    letter-spacing: 0.04em;
+  }
+
+  /* Sections */
+  section { padding: 76px 0; }
+  section + section { border-top: 1px solid var(--line); }
+  .section-head { text-align: center; margin-bottom: 48px; }
+  .section-eyebrow {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--taupe-dark);
+    margin-bottom: 12px;
+  }
+  .section-head h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(34px, 5vw, 48px);
+    line-height: 1.1;
+  }
+  .section-sub {
+    color: rgba(20, 20, 20, 0.72);
+    max-width: 62ch;
+    margin: 14px auto 0;
+  }
+
+  /* Filmography table */
+  .credits-wrap { overflow-x: auto; }
+  table.credits {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+  }
+  .credits th {
+    text-align: left;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--taupe-dark);
+    padding: 12px 14px 12px 0;
+    border-bottom: 2px solid var(--green);
+  }
+  .credits td {
+    padding: 16px 14px 16px 0;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+  .credits td:last-child, .credits th:last-child { padding-right: 0; }
+  .credits .year { white-space: nowrap; color: var(--taupe-dark); font-weight: 400; width: 110px; }
+  .credits .title { font-family: var(--serif); font-size: 19px; line-height: 1.3; }
+  .credits .role { color: rgba(20, 20, 20, 0.85); }
+  .credits .type {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--green);
+    white-space: nowrap;
+  }
+  .credits .note { color: var(--taupe-dark); font-size: 14px; line-height: 1.5; }
+
+  /* Latest project feature */
+  .feature {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 56px;
+    align-items: start;
+  }
+  .feature-media img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+  .feature-kicker {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 12px;
+  }
+  .feature h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(32px, 4.4vw, 44px);
+    line-height: 1.08;
+    margin-bottom: 18px;
+  }
+  .feature p { color: rgba(20, 20, 20, 0.8); margin-bottom: 16px; }
+  .feature-facts {
+    margin-top: 24px;
+    border-top: 1px solid var(--line);
+  }
+  .feature-facts div {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 15px;
+  }
+  .feature-facts dt { color: var(--taupe-dark); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; font-size: 12px; padding-top: 3px; }
+  .feature-facts dd { text-align: right; font-weight: 400; }
+
+  /* Ventures */
+  .venture {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 48px;
+    align-items: center;
+    padding: 44px 0;
+  }
+  .venture + .venture { border-top: 1px solid var(--line); }
+  .venture.reverse { grid-template-columns: 1.2fr 1fr; }
+  .venture.reverse .venture-media { order: 2; }
+  .venture-media img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+  .venture-media.tall img { aspect-ratio: 4 / 5; }
+  .venture-kicker {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 10px;
+  }
+  .venture h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(28px, 3.6vw, 36px);
+    line-height: 1.12;
+    margin-bottom: 14px;
+  }
+  .venture p { color: rgba(20, 20, 20, 0.8); margin-bottom: 12px; }
+  .venture-meta {
+    margin-top: 18px;
+    font-size: 15px;
+    color: var(--taupe-dark);
+    line-height: 1.7;
+  }
+  .venture-meta strong { color: var(--ink); font-weight: 500; }
+
+  /* Press */
+  .press { background: var(--green); color: var(--ivory); }
+  .press .section-eyebrow { color: var(--taupe); }
+  .press .section-head h2 { color: var(--ivory); }
+  .quotes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px 64px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  blockquote { text-align: center; }
+  blockquote p {
+    font-family: var(--serif);
+    font-size: clamp(21px, 2.8vw, 27px);
+    line-height: 1.4;
+  }
+  blockquote footer {
+    margin-top: 16px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--taupe);
+  }
+
+  /* Gallery */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .gallery-grid figure { overflow: hidden; }
+  .gallery-grid img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  .gallery-grid figure:hover img { transform: scale(1.03); }
+  .gallery-grid figcaption {
+    font-size: 13px;
+    color: var(--taupe-dark);
+    margin-top: 10px;
+    line-height: 1.5;
+  }
+
+  /* Bio */
+  .bio { display: grid; grid-template-columns: 1fr 2fr; gap: 56px; align-items: start; }
+  .bio-side h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(34px, 5vw, 48px);
+    line-height: 1.1;
+  }
+  .bio-side .section-eyebrow { margin-bottom: 12px; }
+  .bio-body p { margin-bottom: 18px; color: rgba(20, 20, 20, 0.85); }
+  .bio-body p:first-child { font-size: 19px; line-height: 1.7; }
+  .bio-facts {
+    margin-top: 28px;
+    border-top: 1px solid var(--line);
+  }
+  .bio-facts div {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 15px;
+  }
+  .bio-facts dt { color: var(--taupe-dark); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; font-size: 12px; padding-top: 3px; }
+  .bio-facts dd { text-align: right; }
+
+  /* Appearances */
+  .events { max-width: 820px; margin: 0 auto; }
+  .event {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 28px;
+    padding: 26px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .event:first-child { border-top: 1px solid var(--line); }
+  .event-date { font-family: var(--serif); font-size: 20px; line-height: 1.3; color: var(--green); }
+  .event-date span { display: block; font-family: var(--sans); font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--taupe-dark); margin-top: 2px; }
+  .event h3 { font-family: var(--serif); font-weight: 400; font-size: 23px; line-height: 1.25; margin-bottom: 6px; }
+  .event p { color: rgba(20, 20, 20, 0.75); font-size: 16px; }
+
+  /* Social */
+  .social-handles {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .handle {
+    border: 1px solid var(--line);
+    padding: 16px 26px;
+    text-align: center;
+    min-width: 170px;
+  }
+  .handle .platform {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--taupe-dark);
+  }
+  .handle .name { font-family: var(--serif); font-size: 20px; margin-top: 4px; }
+  .handle .count { font-size: 14px; color: var(--taupe-dark); margin-top: 2px; }
+
+  /* CTA + footer */
+  .cta { text-align: center; padding: 76px 0 84px; }
+  .cta h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(32px, 5vw, 46px);
+    line-height: 1.12;
+    margin-bottom: 16px;
+  }
+  .cta p { color: rgba(20, 20, 20, 0.75); max-width: 56ch; margin: 0 auto 10px; }
+  .cta .contact-line { font-weight: 500; color: var(--ink); }
+  footer {
+    background: var(--ink);
+    color: rgba(247, 244, 238, 0.75);
+    text-align: center;
+    padding: 44px 24px;
+    font-size: 14px;
+    line-height: 1.8;
+  }
+  footer a { color: var(--ivory); }
+  footer .footer-name {
+    font-family: var(--serif);
+    font-size: 20px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ivory);
+    margin-bottom: 8px;
+  }
+
+  /* Mobile */
+  @media (max-width: 820px) {
+    .hero { grid-template-columns: 1fr; gap: 36px; padding: 48px 24px 60px; }
+    .hero-photo { order: -1; aspect-ratio: 4 / 3.4; }
+    .hero-stats { grid-template-columns: repeat(2, 1fr); gap: 20px 12px; }
+    .feature { grid-template-columns: 1fr; gap: 32px; }
+    .venture, .venture.reverse { grid-template-columns: 1fr; gap: 24px; padding: 36px 0; }
+    .venture.reverse .venture-media { order: 0; }
+    .quotes { grid-template-columns: 1fr; gap: 40px; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .bio { grid-template-columns: 1fr; gap: 28px; }
+    .event { grid-template-columns: 1fr; gap: 8px; }
+    section { padding: 56px 0; }
+    .nav-links { gap: 16px; }
+  }
+  @media (max-width: 640px) {
+    body { font-size: 16px; }
+    /* Credits table becomes stacked rows */
+    .credits, .credits tbody, .credits tr, .credits td { display: block; width: 100%; }
+    .credits thead { display: none; }
+    .credits tr { padding: 18px 0; border-bottom: 1px solid var(--line); }
+    .credits td { border: none; padding: 2px 0; }
+    .credits td.year { font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; }
+    .credits td.title { font-size: 21px; }
+    .credits td.type { margin-top: 4px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="leaves" aria-hidden="true">
+  <span class="leaf" style="left: 4%; font-size: 22px; animation-duration: 13s; animation-delay: 0s; --leaf-opacity: 0.5; --leaf-drift: 60px;">&#127809;</span>
+  <span class="leaf" style="left: 12%; font-size: 16px; animation-duration: 17s; animation-delay: 2s; --leaf-opacity: 0.4; --leaf-drift: -30px;">&#127810;</span>
+  <span class="leaf" style="left: 21%; font-size: 26px; animation-duration: 14s; animation-delay: 5s; --leaf-opacity: 0.55; --leaf-drift: 80px;">&#127809;</span>
+  <span class="leaf" style="left: 30%; font-size: 15px; animation-duration: 19s; animation-delay: 1s; --leaf-opacity: 0.35; --leaf-drift: -50px;">&#127810;</span>
+  <span class="leaf" style="left: 38%; font-size: 20px; animation-duration: 12s; animation-delay: 7s; --leaf-opacity: 0.5; --leaf-drift: 40px;">&#127809;</span>
+  <span class="leaf" style="left: 47%; font-size: 24px; animation-duration: 16s; animation-delay: 3s; --leaf-opacity: 0.45; --leaf-drift: -70px;">&#127810;</span>
+  <span class="leaf" style="left: 55%; font-size: 15px; animation-duration: 18s; animation-delay: 9s; --leaf-opacity: 0.4; --leaf-drift: 55px;">&#127809;</span>
+  <span class="leaf" style="left: 63%; font-size: 23px; animation-duration: 13s; animation-delay: 4s; --leaf-opacity: 0.55; --leaf-drift: -40px;">&#127810;</span>
+  <span class="leaf" style="left: 71%; font-size: 17px; animation-duration: 15s; animation-delay: 6s; --leaf-opacity: 0.4; --leaf-drift: 70px;">&#127809;</span>
+  <span class="leaf" style="left: 79%; font-size: 25px; animation-duration: 14s; animation-delay: 8s; --leaf-opacity: 0.5; --leaf-drift: -60px;">&#127810;</span>
+  <span class="leaf" style="left: 87%; font-size: 16px; animation-duration: 17s; animation-delay: 2.5s; --leaf-opacity: 0.35; --leaf-drift: 45px;">&#127809;</span>
+  <span class="leaf" style="left: 94%; font-size: 21px; animation-duration: 12s; animation-delay: 10s; --leaf-opacity: 0.5; --leaf-drift: -35px;">&#127810;</span>
+</div>
+
+<div class="demo-strip">Fictional demo concept by Lexis Sapphire Studio &middot; Not a real person</div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-name">Dana Cole</a>
+    <div class="nav-links">
+      <a href="#film-tv">Film &amp; TV</a>
+      <a href="#latest">Latest Project</a>
+      <a href="#ventures">Ventures</a>
+      <a href="#press">Press</a>
+      <a href="#bio">Bio</a>
+      <a href="#appearances">Appearances</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div>
+    <p class="hero-eyebrow">Detroit &middot; Est. 2015</p>
+    <h1>Dana Cole</h1>
+    <p class="hero-role">Actor. Producer.</p>
+    <p class="hero-intro">Fourteen screen credits, two acting awards, and a career built between Detroit and Los Angeles. From a school play on the west side to a Best Actress win for Winter Harbor, Dana Cole brings the same patience to every role: the work comes first, the noise comes later.</p>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">14</div>
+        <div class="stat-label">Screen credits</div>
+      </div>
+      <div>
+        <div class="stat-num">2</div>
+        <div class="stat-label">Acting awards</div>
+      </div>
+      <div>
+        <div class="stat-num">1.2M</div>
+        <div class="stat-label">Followers</div>
+      </div>
+      <div>
+        <div class="stat-num">3</div>
+        <div class="stat-label">Ventures</div>
+      </div>
+    </div>
+  </div>
+  <figure>
+    <div class="hero-photo">
+      <img src="images/hero-portrait.jpg" alt="Dana Cole, portrait in a forest green blazer against an ivory backdrop">
+    </div>
+    <figcaption class="photo-caption">Dana Cole, Detroit, 2026. Photograph for the Winter Harbor press kit.</figcaption>
+  </figure>
+</header>
+
+<main>
+
+<section id="film-tv">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="section-eyebrow">2015 to 2026</p>
+      <h2>Film &amp; Television</h2>
+      <p class="section-sub">Fourteen credits across eleven years, from an independent debut shot on Detroit's east side to a festival Best Actress win. Every role listed, newest first.</p>
+    </div>
+    <div class="credits-wrap">
+      <table class="credits">
+        <thead>
+          <tr>
+            <th scope="col">Year</th>
+            <th scope="col">Title</th>
+            <th scope="col">Role</th>
+            <th scope="col">Type</th>
+            <th scope="col">Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="year">2026</td>
+            <td class="title">Winter Harbor</td>
+            <td class="role">Ruth Calloway</td>
+            <td class="type">Film</td>
+            <td class="note">Lead role. Best Actress, Autumn Lights Film Festival 2026.</td>
+          </tr>
+          <tr>
+            <td class="year">2025</td>
+            <td class="title">The Mercury Room</td>
+            <td class="role">Detective Lena Brooks</td>
+            <td class="type">Film</td>
+            <td class="note">Lead role. Filmed in Detroit over 31 days.</td>
+          </tr>
+          <tr>
+            <td class="year">2024</td>
+            <td class="title">The Last Set at the Blue Lantern</td>
+            <td class="role">Ada Whitfield</td>
+            <td class="type">Film</td>
+            <td class="note">Lead role. Sang all six songs live on set.</td>
+          </tr>
+          <tr>
+            <td class="year">2024-2026</td>
+            <td class="title">The River Ward</td>
+            <td class="role">Mayor Evelyn Stone</td>
+            <td class="type">TV</td>
+            <td class="note">Series regular, 3 seasons, 24 episodes.</td>
+          </tr>
+          <tr>
+            <td class="year">2023</td>
+            <td class="title">The House on Glynn Court</td>
+            <td class="role">Naomi Carter</td>
+            <td class="type">Film</td>
+            <td class="note">Lead role. Shot on location in Detroit.</td>
+          </tr>
+          <tr>
+            <td class="year">2022</td>
+            <td class="title">After the Harvest</td>
+            <td class="role">Pastor Elaine Morris</td>
+            <td class="type">Film</td>
+            <td class="note">Supporting role. Motor City Arts Prize, 2022.</td>
+          </tr>
+          <tr>
+            <td class="year">2022-2023</td>
+            <td class="title">The Third Floor</td>
+            <td class="role">Dr. Amara Okafor</td>
+            <td class="type">TV</td>
+            <td class="note">Series regular, 2 seasons, 18 episodes.</td>
+          </tr>
+          <tr>
+            <td class="year">2021</td>
+            <td class="title">The Far Side of Summer</td>
+            <td class="role">June Parker</td>
+            <td class="type">Film</td>
+            <td class="note">Lead role. Cole House Pictures, first production.</td>
+          </tr>
+          <tr>
+            <td class="year">2020</td>
+            <td class="title">Belle Isle</td>
+            <td class="role">Sarah Whitmore</td>
+            <td class="type">TV</td>
+            <td class="note">Limited series, 6 episodes.</td>
+          </tr>
+          <tr>
+            <td class="year">2019</td>
+            <td class="title">Iron and Lace</td>
+            <td class="role">Vivian Cross</td>
+            <td class="type">Film</td>
+            <td class="note">Supporting role.</td>
+          </tr>
+          <tr>
+            <td class="year">2018</td>
+            <td class="title">Eastside General</td>
+            <td class="role">Nurse Tanya Reed</td>
+            <td class="type">TV</td>
+            <td class="note">Recurring role, 9 episodes.</td>
+          </tr>
+          <tr>
+            <td class="year">2017</td>
+            <td class="title">North of the River</td>
+            <td class="role">Officer Dana Reese</td>
+            <td class="type">Film</td>
+            <td class="note">Supporting role.</td>
+          </tr>
+          <tr>
+            <td class="year">2016</td>
+            <td class="title">The Winter Count</td>
+            <td class="role">Mabel Turner</td>
+            <td class="type">Film</td>
+            <td class="note">Supporting role.</td>
+          </tr>
+          <tr>
+            <td class="year">2015</td>
+            <td class="title">The Carters of Custer Street</td>
+            <td class="role">Denise Carter</td>
+            <td class="type">Film</td>
+            <td class="note">Feature debut. Independent film, Detroit.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="latest">
+  <div class="wrap">
+    <div class="feature">
+      <figure class="feature-media">
+        <img src="images/still-drama.jpg" alt="Still from Winter Harbor: Ruth Calloway at a rain-streaked kitchen window at dusk">
+        <figcaption class="photo-caption">Winter Harbor (2026). Ruth Calloway, the night she comes home.</figcaption>
+      </figure>
+      <div>
+        <p class="feature-kicker">Latest Project &middot; In Theaters December 2026</p>
+        <h3>Winter Harbor</h3>
+        <p>A former prosecutor returns to her hometown on the Michigan shore to settle her late father's estate, and finds the lake, and the family, are not finished with her. Cole plays Ruth Calloway, a woman who left at eighteen and swore she would never come back.</p>
+        <p>The film premiered in October 2026 at the Autumn Lights Film Festival, where Cole won Best Actress. It was filmed in 28 days on location in Detroit and Traverse City, with a cast and crew that was more than half Michigan based.</p>
+        <dl class="feature-facts">
+          <div><dt>Director</dt><dd>Samuel Okonkwo</dd></div>
+          <div><dt>Writer</dt><dd>Priya Raman</dd></div>
+          <div><dt>Co-starring</dt><dd>Andre Baptiste, Mara Ellison</dd></div>
+          <div><dt>Runtime</dt><dd>118 minutes</dd></div>
+          <div><dt>Filmed</dt><dd>Detroit and Traverse City, Michigan</dd></div>
+          <div><dt>Release</dt><dd>Select theaters, December 2026</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ventures">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="section-eyebrow">Beyond the Screen</p>
+      <h2>Ventures</h2>
+      <p class="section-sub">A production company, a skincare line, and a memoir. Each one started in Detroit, each one run the same way Cole runs a set: slowly, carefully, and with the right people.</p>
+    </div>
+
+    <div class="venture">
+      <figure class="venture-media">
+        <img src="images/set-shot.jpg" alt="Dana Cole producing on a film set, reviewing a shot beside a cinema camera">
+      </figure>
+      <div>
+        <p class="venture-kicker">Production Company &middot; Founded 2021</p>
+        <h3>Cole House Pictures</h3>
+        <p>An independent production company based in Eastern Market, Detroit. Cole House develops and produces films and series rooted in the Midwest, with a standing rule: every production hires at least half its crew from Michigan.</p>
+        <p>Six films produced since 2021, including The Far Side of Summer and Winter Harbor. The company also runs a paid summer internship for Detroit high school students interested in film work.</p>
+        <p class="venture-meta"><strong>Based:</strong> Eastern Market, Detroit &middot; <strong>Films produced:</strong> 6 &middot; <strong>Team:</strong> 9 full time</p>
+      </div>
+    </div>
+
+    <div class="venture reverse">
+      <figure class="venture-media">
+        <img src="images/skincare.jpg" alt="Cole and Co. skincare line: facial oil, toner, serum, and moisture cream">
+      </figure>
+      <div>
+        <p class="venture-kicker">Skincare &middot; Launched 2023</p>
+        <h3>Cole &amp; Co.</h3>
+        <p>A four product skincare line built for long days under hot lights. Cole developed the formulas over two years with a Michigan chemist, after a decade of makeup chairs taught her what her skin actually needed.</p>
+        <p>The line is fragrance free, made in small batches, and sold online and at 14 independent boutiques across Michigan and Illinois. Five percent of profits fund the Detroit Youth Theatre Fund.</p>
+        <p class="venture-meta"><strong>The line:</strong> Facial Oil $48 &middot; Toner $34 &middot; Serum $62 &middot; Moisture Cream $54</p>
+      </div>
+    </div>
+
+    <div class="venture">
+      <figure class="venture-media tall">
+        <img src="images/book-cover.jpg" alt="Book cover of The Long Way Home, a memoir by Dana Cole">
+      </figure>
+      <div>
+        <p class="venture-kicker">Memoir &middot; Published March 2025</p>
+        <h3>The Long Way Home</h3>
+        <p>A memoir in 22 chapters, from a childhood on Detroit's west side to a career that took her to Los Angeles and back. Cole writes about the school plays, the lean years, the roles that got away, and the decision to build a life and a company in the city that raised her.</p>
+        <p>The book spent 11 weeks on the Detroit regional bestseller list and was a staff pick at bookshops across Michigan. The paperback includes a new afterword about filming Winter Harbor.</p>
+        <p class="venture-meta"><strong>Publisher:</strong> Juniper Street Books &middot; <strong>Pages:</strong> 288 &middot; <strong>Hardcover:</strong> $28 &middot; <strong>Paperback:</strong> $18</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="press" class="press">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="section-eyebrow">What They Say</p>
+      <h2>Press</h2>
+    </div>
+    <div class="quotes">
+      <blockquote>
+        <p>&ldquo;Cole gives the performance of the year, quiet and devastating in equal measure.&rdquo;</p>
+        <footer>The Detroit Sound</footer>
+      </blockquote>
+      <blockquote>
+        <p>&ldquo;A masterclass in restraint. Dana Cole does not act a scene, she inhabits it.&rdquo;</p>
+        <footer>Great Lakes Arts Journal</footer>
+      </blockquote>
+      <blockquote>
+        <p>&ldquo;Winter Harbor belongs to Cole from its first frame to its last.&rdquo;</p>
+        <footer>The Lakefront Review</footer>
+      </blockquote>
+      <blockquote>
+        <p>&ldquo;The most reliable screen presence of her generation, and the most generous.&rdquo;</p>
+        <footer>Midwest Stage &amp; Screen</footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="section-eyebrow">On Screen and Off</p>
+      <h2>Gallery</h2>
+    </div>
+    <div class="gallery-grid">
+      <figure>
+        <img src="images/still-period.jpg" alt="Dana Cole as Ada Whitfield, singing on a 1968 jazz club stage">
+        <figcaption>The Last Set at the Blue Lantern (2024). Ada Whitfield, final set.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/still-thriller.jpg" alt="Dana Cole as Detective Lena Brooks in a dim precinct hallway">
+        <figcaption>The Mercury Room (2025). Detective Lena Brooks, night shift.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/gallery-redcarpet.jpg" alt="Dana Cole on a premiere red carpet in an ivory gown">
+        <figcaption>Winter Harbor premiere, Autumn Lights Film Festival, October 2026.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/gallery-detroit.jpg" alt="Dana Cole on a tree-lined Detroit street in autumn">
+        <figcaption>West side, Detroit. Autumn 2026.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="bio">
+  <div class="wrap">
+    <div class="bio">
+      <div class="bio-side">
+        <p class="section-eyebrow">The Story</p>
+        <h2>Biography</h2>
+      </div>
+      <div class="bio-body">
+        <p>Dana Cole was born in 1984 and raised on Detroit's west side, near Grand River and Livernois, the oldest of three. Her first role came at nine, in a school production, and she never really stopped. By high school she was doing three shows a year and ushering at community theaters on weekends to watch the professionals up close.</p>
+        <p>She earned a BFA in Theatre from Wayne State University in 2006 and took her first professional role the next year, in a production of The Corner Store at the Westside Community Playhouse. The early years were lean: day jobs in restaurants and offices, night rehearsals, and a string of small parts in independent films shot around Michigan.</p>
+        <p>The move to Los Angeles came in 2011. Eleven years, nine screen credits, and one long stretch of almosts later, she moved home. Detroit had changed, and so had she. In 2021 she founded Cole House Pictures in Eastern Market, with a simple idea: make the films she wanted to see, with the crews she grew up around.</p>
+        <p>She lives in Detroit with her husband and two children, serves on the board of the Detroit Youth Theatre Fund, and still ushers one show a year at the theater where she got her start.</p>
+        <dl class="bio-facts">
+          <div><dt>Born</dt><dd>1984, Detroit, Michigan</dd></div>
+          <div><dt>Training</dt><dd>BFA in Theatre, Wayne State University, 2006</dd></div>
+          <div><dt>First role</dt><dd>Age 9, school production, Detroit</dd></div>
+          <div><dt>First professional role</dt><dd>2007, The Corner Store</dd></div>
+          <div><dt>Awards</dt><dd>Great Lakes Acting Award, 2024; Motor City Arts Prize, 2022</dd></div>
+          <div><dt>Based</dt><dd>Detroit, Michigan</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="appearances">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="section-eyebrow">See Her In Person</p>
+      <h2>Upcoming Appearances</h2>
+    </div>
+    <div class="events">
+      <div class="event">
+        <div class="event-date">Dec 6, 2026<span>Sunday &middot; 7:00 PM</span></div>
+        <div>
+          <h3>Winter Harbor Screening and Q&amp;A</h3>
+          <p>The Grand Riverview Cinema, Detroit, Michigan. Screening followed by a question and answer session with Dana Cole and director Samuel Okonkwo.</p>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-date">Dec 12, 2026<span>Saturday &middot; 2:00 PM</span></div>
+        <div>
+          <h3>The Long Way Home Book Signing</h3>
+          <p>Dog Ear Books, Ann Arbor, Michigan. Signing and short reading from the memoir, with the paperback edition available.</p>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-date">Jan 17, 2027<span>Sunday &middot; 11:00 AM</span></div>
+        <div>
+          <h3>Panel: Producing in the Midwest</h3>
+          <p>Detroit Film Society Winter Summit, Detroit Public Library, Main Branch, Detroit, Michigan. A panel on building a production company outside Los Angeles and New York.</p>
+        </div>
+      </div>
+      <div class="event">
+        <div class="event-date">Feb 6, 2027<span>Saturday &middot; 10:00 AM</span></div>
+        <div>
+          <h3>Cole &amp; Co. Pop-Up Shop</h3>
+          <p>Eastern Market, Shed 5, Detroit, Michigan. The full skincare line, plus a limited winter set available only at the pop-up. Open until 2:00 PM.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="social">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="section-eyebrow">Follow Along</p>
+      <h2>Social</h2>
+    </div>
+    <div class="social-handles">
+      <div class="handle">
+        <div class="platform">Instagram</div>
+        <div class="name">@danacole</div>
+        <div class="count">842K followers</div>
+      </div>
+      <div class="handle">
+        <div class="platform">TikTok</div>
+        <div class="name">@danacoleofficial</div>
+        <div class="count">218K followers</div>
+      </div>
+      <div class="handle">
+        <div class="platform">X</div>
+        <div class="name">@danacole</div>
+        <div class="count">96K followers</div>
+      </div>
+      <div class="handle">
+        <div class="platform">YouTube</div>
+        <div class="name">@danacole</div>
+        <div class="count">74K subscribers</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>For bookings and press inquiries</h2>
+    <p>Representation, interviews, and event requests are handled through Cole House Pictures in Detroit. Please allow two business days for a reply.</p>
+    <p class="contact-line">Cole House Pictures &middot; Eastern Market &middot; Detroit, Michigan</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="footer-name">Dana Cole</div>
+  <p>Fictional demo site built by Lexis Sapphire Studio. Not a real person.</p>
+  <p>Want a website like this for your artist? Visit <a href="https://lexissapphirestudio.com/">Lexis Sapphire Studio</a>.</p>
+</footer>
+
+</body>
+</html>
