@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dana Cole | Actor. Producer.</title>
-<meta name="description" content="Dana Cole is a fictional actor and producer from Detroit. Film and television credits, latest project Winter Harbor, Cole House Pictures, Cole and Co. skincare, and the memoir The Long Way Home.">
+<meta name="description" content="Dana Cole is a fictional actor and producer from Detroit. Fourteen screen credits, three acting awards, latest project Winter Harbor, now filming The Glass Orchard, Cole House Pictures, Cole and Co. skincare, and the memoir The Long Way Home.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
@@ -249,6 +249,174 @@
   }
   .credits .note { color: var(--taupe-dark); font-size: 14px; line-height: 1.5; }
 
+  /* Film cards */
+  .film-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 64px;
+  }
+  .film-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .film-card-media { overflow: hidden; }
+  .film-card-media img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  .film-card:hover .film-card-media img { transform: scale(1.03); }
+  .film-card-body { padding: 18px 16px 20px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+  .film-card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10px;
+  }
+  .film-card-year {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--taupe-dark);
+  }
+  .film-card-type {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--green);
+    background: rgba(30, 58, 47, 0.08);
+    padding: 3px 8px;
+    white-space: nowrap;
+  }
+  .film-card h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 1.2;
+  }
+  .film-card-role {
+    font-size: 15px;
+    color: rgba(20, 20, 20, 0.8);
+  }
+  .film-card-role span { color: var(--taupe-dark); }
+  .film-card-detail {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--taupe-dark);
+    flex: 1;
+  }
+  .film-card-proof {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--green);
+    border-top: 1px solid var(--line);
+    padding-top: 10px;
+    margin-top: 6px;
+  }
+
+  /* Full credits, compact */
+  .full-credits-head {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 26px;
+    text-align: center;
+    margin-bottom: 28px;
+  }
+  .credits.compact { font-size: 15px; }
+  .credits.compact td { padding: 11px 14px 11px 0; }
+  .credits.compact .title { font-size: 17px; }
+  .credits-total {
+    text-align: center;
+    margin-top: 26px;
+    font-size: 16px;
+    color: rgba(20, 20, 20, 0.8);
+  }
+  .credits-total strong { font-family: var(--serif); font-weight: 400; font-size: 22px; color: var(--green); }
+
+  /* Awards shelf */
+  .awards { background: var(--taupe); }
+  .awards .section-eyebrow { color: rgba(20, 20, 20, 0.6); }
+  .award-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1020px;
+    margin: 0 auto;
+  }
+  .award {
+    background: var(--ivory);
+    border: 1px solid rgba(20, 20, 20, 0.12);
+    padding: 26px 22px;
+    text-align: center;
+  }
+  .award-year {
+    font-family: var(--serif);
+    font-size: 34px;
+    line-height: 1;
+    color: var(--green);
+  }
+  .award-name {
+    font-family: var(--serif);
+    font-size: 20px;
+    line-height: 1.25;
+    margin: 12px 0 4px;
+  }
+  .award-org {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--taupe-dark);
+  }
+  .award-work {
+    font-size: 15px;
+    color: rgba(20, 20, 20, 0.75);
+    margin-top: 10px;
+  }
+  .award-badge {
+    display: inline-block;
+    margin-top: 14px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+  }
+  .award-badge.won { background: var(--green); color: var(--ivory); }
+  .award-badge.nominated { border: 1px solid var(--green); color: var(--green); }
+
+  /* Dark feature band */
+  .feature-dark { background: var(--green); color: var(--ivory); }
+  .feature-dark .feature-kicker { color: var(--taupe); }
+  .feature-dark h3 { color: var(--ivory); }
+  .feature-dark p { color: rgba(247, 244, 238, 0.85); }
+  .feature-dark .photo-caption { color: var(--taupe); }
+  .feature-dark .feature-facts { border-top-color: rgba(247, 244, 238, 0.25); }
+  .feature-dark .feature-facts div { border-bottom-color: rgba(247, 244, 238, 0.25); }
+  .feature-dark .feature-facts dt { color: var(--taupe); }
+  .feature-dark .feature-facts dd { color: var(--ivory); }
+  .feature-media.portrait img { object-position: center 25%; }
+  .now-filming-badge {
+    display: inline-block;
+    background: var(--green);
+    color: var(--ivory);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    margin-bottom: 14px;
+  }
+
+  /* Gallery band */
+  .gallery-band { background: #EFE9DC; }
+
   /* Latest project feature */
   .feature {
     display: grid;
@@ -475,6 +643,8 @@
     .venture.reverse .venture-media { order: 0; }
     .quotes { grid-template-columns: 1fr; gap: 40px; }
     .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .film-cards { grid-template-columns: repeat(2, 1fr); }
+    .award-grid { grid-template-columns: repeat(2, 1fr); }
     .bio { grid-template-columns: 1fr; gap: 28px; }
     .event { grid-template-columns: 1fr; gap: 8px; }
     section { padding: 56px 0; }
@@ -490,6 +660,10 @@
     .credits td.year { font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; }
     .credits td.title { font-size: 21px; }
     .credits td.type { margin-top: 4px; }
+  }
+  @media (max-width: 560px) {
+    .film-cards { grid-template-columns: 1fr; }
+    .award-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -517,6 +691,7 @@
     <a href="#" class="nav-name">Dana Cole</a>
     <div class="nav-links">
       <a href="#film-tv">Film &amp; TV</a>
+      <a href="#awards">Awards</a>
       <a href="#latest">Latest Project</a>
       <a href="#ventures">Ventures</a>
       <a href="#press">Press</a>
@@ -531,14 +706,14 @@
     <p class="hero-eyebrow">Detroit &middot; Est. 2015</p>
     <h1>Dana Cole</h1>
     <p class="hero-role">Actor. Producer.</p>
-    <p class="hero-intro">Fourteen screen credits, two acting awards, and a career built between Detroit and Los Angeles. From a school play on the west side to a Best Actress win for Winter Harbor, Dana Cole brings the same patience to every role: the work comes first, the noise comes later.</p>
+    <p class="hero-intro">Fourteen screen credits, three acting awards, and a career built between Detroit and Los Angeles. From a school play on the west side to a Best Actress win for Winter Harbor, Dana Cole brings the same patience to every role: the work comes first, the noise comes later.</p>
     <div class="hero-stats">
       <div>
         <div class="stat-num">14</div>
         <div class="stat-label">Screen credits</div>
       </div>
       <div>
-        <div class="stat-num">2</div>
+        <div class="stat-num">3</div>
         <div class="stat-label">Acting awards</div>
       </div>
       <div>
@@ -566,10 +741,93 @@
     <div class="section-head">
       <p class="section-eyebrow">2015 to 2026</p>
       <h2>Film &amp; Television</h2>
-      <p class="section-sub">Fourteen credits across eleven years, from an independent debut shot on Detroit's east side to a festival Best Actress win. Every role listed, newest first.</p>
+      <p class="section-sub">Eight roles in pictures, newest first, with the numbers behind them. The full list of all fourteen credits is below.</p>
     </div>
+    <div class="film-cards">
+      <article class="film-card">
+        <div class="film-card-media"><img src="images/still-drama.jpg" alt="Still from Winter Harbor: Ruth Calloway at a rain-streaked kitchen window at dusk"></div>
+        <div class="film-card-body">
+          <div class="film-card-meta"><span class="film-card-year">2026</span><span class="film-card-type">Film</span></div>
+          <h3>Winter Harbor</h3>
+          <p class="film-card-role"><span>as</span> Ruth Calloway</p>
+          <p class="film-card-detail">Lead role. Best Actress, Autumn Lights Film Festival 2026.</p>
+          <p class="film-card-proof">$4.2M box office, limited release</p>
+        </div>
+      </article>
+      <article class="film-card">
+        <div class="film-card-media"><img src="images/still-thriller.jpg" alt="Still from The Mercury Room: Detective Lena Brooks in a dim precinct hallway"></div>
+        <div class="film-card-body">
+          <div class="film-card-meta"><span class="film-card-year">2025</span><span class="film-card-type">Film</span></div>
+          <h3>The Mercury Room</h3>
+          <p class="film-card-role"><span>as</span> Detective Lena Brooks</p>
+          <p class="film-card-detail">Lead role. Filmed in Detroit over 31 days.</p>
+          <p class="film-card-proof">$18.6M worldwide box office</p>
+        </div>
+      </article>
+      <article class="film-card">
+        <div class="film-card-media"><img src="images/still-period.jpg" alt="Still from The Last Set at the Blue Lantern: Ada Whitfield singing on a 1968 jazz club stage"></div>
+        <div class="film-card-body">
+          <div class="film-card-meta"><span class="film-card-year">2024</span><span class="film-card-type">Film</span></div>
+          <h3>The Last Set at the Blue Lantern</h3>
+          <p class="film-card-role"><span>as</span> Ada Whitfield</p>
+          <p class="film-card-detail">Lead role. Sang all six songs live on set.</p>
+          <p class="film-card-proof">$2.8M box office</p>
+        </div>
+      </article>
+      <article class="film-card">
+        <div class="film-card-media"><img src="images/still-river-ward.jpg" alt="Still from The River Ward: Mayor Evelyn Stone at a city hall press conference podium"></div>
+        <div class="film-card-body">
+          <div class="film-card-meta"><span class="film-card-year">2024-2026</span><span class="film-card-type">TV</span></div>
+          <h3>The River Ward</h3>
+          <p class="film-card-role"><span>as</span> Mayor Evelyn Stone</p>
+          <p class="film-card-detail">Series regular, 3 seasons, 24 episodes.</p>
+          <p class="film-card-proof">Season 3 premiere: 2.1M viewers</p>
+        </div>
+      </article>
+      <article class="film-card">
+        <div class="film-card-media"><img src="images/still-glynn-court.jpg" alt="Still from The House on Glynn Court: Naomi Carter in a lamplit Victorian hallway at dusk"></div>
+        <div class="film-card-body">
+          <div class="film-card-meta"><span class="film-card-year">2023</span><span class="film-card-type">Film</span></div>
+          <h3>The House on Glynn Court</h3>
+          <p class="film-card-role"><span>as</span> Naomi Carter</p>
+          <p class="film-card-detail">Lead role. Shot on location in Detroit.</p>
+          <p class="film-card-proof">$6.1M box office</p>
+        </div>
+      </article>
+      <article class="film-card">
+        <div class="film-card-media"><img src="images/still-harvest.jpg" alt="Still from After the Harvest: Pastor Elaine Morris at a wooden pulpit in a country church"></div>
+        <div class="film-card-body">
+          <div class="film-card-meta"><span class="film-card-year">2022</span><span class="film-card-type">Film</span></div>
+          <h3>After the Harvest</h3>
+          <p class="film-card-role"><span>as</span> Pastor Elaine Morris</p>
+          <p class="film-card-detail">Supporting role. Motor City Arts Prize, 2022.</p>
+          <p class="film-card-proof">$1.9M box office</p>
+        </div>
+      </article>
+      <article class="film-card">
+        <div class="film-card-media"><img src="images/still-third-floor.jpg" alt="Still from The Third Floor: Dr. Amara Okafor in a hospital corridor with a patient chart"></div>
+        <div class="film-card-body">
+          <div class="film-card-meta"><span class="film-card-year">2022-2023</span><span class="film-card-type">TV</span></div>
+          <h3>The Third Floor</h3>
+          <p class="film-card-role"><span>as</span> Dr. Amara Okafor</p>
+          <p class="film-card-detail">Series regular, 2 seasons, 18 episodes.</p>
+          <p class="film-card-proof">1.4M viewers per episode</p>
+        </div>
+      </article>
+      <article class="film-card">
+        <div class="film-card-media"><img src="images/still-far-side.jpg" alt="Still from The Far Side of Summer: June Parker on a wooden dock at a lake house at golden hour"></div>
+        <div class="film-card-body">
+          <div class="film-card-meta"><span class="film-card-year">2021</span><span class="film-card-type">Film</span></div>
+          <h3>The Far Side of Summer</h3>
+          <p class="film-card-role"><span>as</span> June Parker</p>
+          <p class="film-card-detail">Lead role. Cole House Pictures, first production.</p>
+          <p class="film-card-proof">$3.4M box office</p>
+        </div>
+      </article>
+    </div>
+    <h3 class="full-credits-head">Full Credits, 2015 to 2026</h3>
     <div class="credits-wrap">
-      <table class="credits">
+      <table class="credits compact">
         <thead>
           <tr>
             <th scope="col">Year</th>
@@ -641,50 +899,105 @@
             <td class="title">Belle Isle</td>
             <td class="role">Sarah Whitmore</td>
             <td class="type">TV</td>
-            <td class="note">Limited series, 6 episodes.</td>
+            <td class="note">Limited series, 6 episodes. 980K viewers per episode.</td>
           </tr>
           <tr>
             <td class="year">2019</td>
             <td class="title">Iron and Lace</td>
             <td class="role">Vivian Cross</td>
             <td class="type">Film</td>
-            <td class="note">Supporting role.</td>
+            <td class="note">Supporting role. $5.7M box office.</td>
           </tr>
           <tr>
             <td class="year">2018</td>
             <td class="title">Eastside General</td>
             <td class="role">Nurse Tanya Reed</td>
             <td class="type">TV</td>
-            <td class="note">Recurring role, 9 episodes.</td>
+            <td class="note">Recurring role, 9 episodes. Season high: 1.1M viewers.</td>
           </tr>
           <tr>
             <td class="year">2017</td>
             <td class="title">North of the River</td>
             <td class="role">Officer Dana Reese</td>
             <td class="type">Film</td>
-            <td class="note">Supporting role.</td>
+            <td class="note">Supporting role. $2.2M box office.</td>
           </tr>
           <tr>
             <td class="year">2016</td>
             <td class="title">The Winter Count</td>
             <td class="role">Mabel Turner</td>
             <td class="type">Film</td>
-            <td class="note">Supporting role.</td>
+            <td class="note">Supporting role. $1.1M box office.</td>
           </tr>
           <tr>
             <td class="year">2015</td>
             <td class="title">The Carters of Custer Street</td>
             <td class="role">Denise Carter</td>
             <td class="type">Film</td>
-            <td class="note">Feature debut. Independent film, Detroit.</td>
+            <td class="note">Feature debut. Independent film, Detroit. $0.4M box office.</td>
           </tr>
         </tbody>
       </table>
     </div>
+    <p class="credits-total">Combined box office across ten feature films: <strong>$46.4 million</strong></p>
   </div>
 </section>
 
-<section id="latest">
+<section id="awards" class="awards">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="section-eyebrow">Recognition</p>
+      <h2>Awards</h2>
+      <p class="section-sub">Three wins and three nominations across film and television, from a first prize in Detroit to a festival Best Actress in 2026.</p>
+    </div>
+    <div class="award-grid">
+      <div class="award">
+        <div class="award-year">2026</div>
+        <div class="award-name">Best Actress</div>
+        <div class="award-org">Autumn Lights Film Festival</div>
+        <div class="award-work">Winter Harbor, as Ruth Calloway</div>
+        <span class="award-badge won">Won</span>
+      </div>
+      <div class="award">
+        <div class="award-year">2026</div>
+        <div class="award-name">Best Lead Actress</div>
+        <div class="award-org">Lakeshore Film Honors</div>
+        <div class="award-work">Winter Harbor, as Ruth Calloway</div>
+        <span class="award-badge nominated">Nominated</span>
+      </div>
+      <div class="award">
+        <div class="award-year">2025</div>
+        <div class="award-name">Best Ensemble</div>
+        <div class="award-org">Great Lakes Screen Awards</div>
+        <div class="award-work">The River Ward, as Mayor Evelyn Stone</div>
+        <span class="award-badge nominated">Nominated</span>
+      </div>
+      <div class="award">
+        <div class="award-year">2024</div>
+        <div class="award-name">Great Lakes Acting Award</div>
+        <div class="award-org">Great Lakes Arts Journal</div>
+        <div class="award-work">The Last Set at the Blue Lantern, as Ada Whitfield</div>
+        <span class="award-badge won">Won</span>
+      </div>
+      <div class="award">
+        <div class="award-year">2023</div>
+        <div class="award-name">Best Actress</div>
+        <div class="award-org">Midwest Independent Film Awards</div>
+        <div class="award-work">The House on Glynn Court, as Naomi Carter</div>
+        <span class="award-badge nominated">Nominated</span>
+      </div>
+      <div class="award">
+        <div class="award-year">2022</div>
+        <div class="award-name">Motor City Arts Prize</div>
+        <div class="award-org">Detroit Arts Council</div>
+        <div class="award-work">After the Harvest, as Pastor Elaine Morris</div>
+        <span class="award-badge won">Won</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="latest" class="feature-dark">
   <div class="wrap">
     <div class="feature">
       <figure class="feature-media">
@@ -701,8 +1014,37 @@
           <div><dt>Writer</dt><dd>Priya Raman</dd></div>
           <div><dt>Co-starring</dt><dd>Andre Baptiste, Mara Ellison</dd></div>
           <div><dt>Runtime</dt><dd>118 minutes</dd></div>
+          <div><dt>Box office</dt><dd>$4.2M in limited release</dd></div>
+          <div><dt>Festivals</dt><dd>14 selections, 3 wins</dd></div>
           <div><dt>Filmed</dt><dd>Detroit and Traverse City, Michigan</dd></div>
           <div><dt>Release</dt><dd>Select theaters, December 2026</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="now-filming">
+  <div class="wrap">
+    <div class="feature">
+      <figure class="feature-media portrait">
+        <img src="images/still-glass-orchard.jpg" alt="Still from The Glass Orchard: Willa Hart in the orchid house, holding pruning shears">
+        <figcaption class="photo-caption">The Glass Orchard (2027). Willa Hart in the orchid house.</figcaption>
+      </figure>
+      <div>
+        <span class="now-filming-badge">Now Filming</span>
+        <p class="feature-kicker">Cole House Pictures &middot; Expected Fall 2027</p>
+        <h3>The Glass Orchard</h3>
+        <p>Cole plays Willa Hart, a greenhouse keeper in a small Michigan town who inherits her late aunt's orchid nursery, and the family secrets buried with it. A quiet drama about the things people grow and the things they hide.</p>
+        <p>Filming began in November 2026 in Detroit and Ann Arbor, with a 24-day shoot built around the seasons. Cole also produces through Cole House Pictures, her seventh production with the company.</p>
+        <dl class="feature-facts">
+          <div><dt>Role</dt><dd>Willa Hart, lead</dd></div>
+          <div><dt>Director</dt><dd>Jonas Whitfield</dd></div>
+          <div><dt>Writer</dt><dd>Lena Marsh</dd></div>
+          <div><dt>Co-starring</dt><dd>Theo Sandoval, Ruth Abernathy</dd></div>
+          <div><dt>Filmed</dt><dd>Detroit and Ann Arbor, Michigan</dd></div>
+          <div><dt>Shoot</dt><dd>24 days, November to December 2026</dd></div>
+          <div><dt>Release</dt><dd>Fall 2027</dd></div>
         </dl>
       </div>
     </div>
@@ -785,11 +1127,12 @@
   </div>
 </section>
 
-<section id="gallery">
+<section id="gallery" class="gallery-band">
   <div class="wrap">
     <div class="section-head">
       <p class="section-eyebrow">On Screen and Off</p>
       <h2>Gallery</h2>
+      <p class="section-sub">Eight frames from the work, the premieres, and the days in between.</p>
     </div>
     <div class="gallery-grid">
       <figure>
@@ -801,8 +1144,24 @@
         <figcaption>The Mercury Room (2025). Detective Lena Brooks, night shift.</figcaption>
       </figure>
       <figure>
+        <img src="images/gallery-bts.jpg" alt="Dana Cole in a makeup chair on set, smiling while a makeup artist styles her hair">
+        <figcaption>Behind the scenes on The Glass Orchard. Hair and makeup, day one.</figcaption>
+      </figure>
+      <figure>
         <img src="images/gallery-redcarpet.jpg" alt="Dana Cole on a premiere red carpet in an ivory gown">
         <figcaption>Winter Harbor premiere, Autumn Lights Film Festival, October 2026.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/gallery-stage.jpg" alt="Dana Cole rehearsing on a theatre stage under a single spotlight">
+        <figcaption>Rehearsing at the Westside Community Playhouse, where she got her start.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/gallery-panel.jpg" alt="Dana Cole speaking on a stage panel at a film festival, seated at a table with a microphone">
+        <figcaption>Producing in the Midwest panel, Detroit Film Society, 2026.</figcaption>
+      </figure>
+      <figure>
+        <img src="images/gallery-redcarpet2.jpg" alt="Dana Cole on a premiere red carpet in a burgundy evening gown">
+        <figcaption>The Mercury Room premiere, Lakeshore Film Honors, 2025.</figcaption>
       </figure>
       <figure>
         <img src="images/gallery-detroit.jpg" alt="Dana Cole on a tree-lined Detroit street in autumn">
@@ -829,7 +1188,7 @@
           <div><dt>Training</dt><dd>BFA in Theatre, Wayne State University, 2006</dd></div>
           <div><dt>First role</dt><dd>Age 9, school production, Detroit</dd></div>
           <div><dt>First professional role</dt><dd>2007, The Corner Store</dd></div>
-          <div><dt>Awards</dt><dd>Great Lakes Acting Award, 2024; Motor City Arts Prize, 2022</dd></div>
+          <div><dt>Awards</dt><dd>Best Actress, Autumn Lights Film Festival, 2026; Great Lakes Acting Award, 2024; Motor City Arts Prize, 2022</dd></div>
           <div><dt>Based</dt><dd>Detroit, Michigan</dd></div>
         </dl>
       </div>
